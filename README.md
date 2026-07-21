@@ -1,6 +1,10 @@
+<<<<<<< HEAD
+# RL_gymnasium_comparison-
+Reinforcement Learning Project comparing various RL models using OpenAI Gymnasium.  Logs step and wall-time vs success metrics and displacements, functions for creating videos, etc.
+
 # RL Algorithm Comparison: Reacher & Pusher
 
-MECH 262 course project: a rigorous comparison of continuous-control RL
+project: a rigorous comparison of continuous-control RL
 algorithms on OpenAI Gymnasium's `Reacher-v5` and `Pusher-v5` (both MuJoCo).
 
 ## Algorithmic arc
@@ -158,3 +162,7 @@ to validate against a real learning curve, not settled values.
 - TD3: https://arxiv.org/abs/1802.09477
 - SAC: https://arxiv.org/abs/1801.01290, https://arxiv.org/abs/1812.05905
 - PPO: https://arxiv.org/abs/1707.06347
+=======
+# RL_gymnasium_comparison-
+Reinforcement Learning Project comparing various RL models using OpenAI Gymnasium.  Logs step and wall-time vs success metrics and displacements, functions for creating videos, etc.
+>>>>>>> ac4186438530636a2cd7c483961262bbd9189d40
