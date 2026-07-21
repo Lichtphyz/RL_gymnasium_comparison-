@@ -1,0 +1,18 @@
+# TD3 hyperparameters for Pusher-v5
+#
+# Kept structurally identical to configs/pusher/ddpg.yml on purpose, same
+# reasoning as the Reacher configs: matching every other hyperparameter
+# isolates TD3's fixes (delayed updates, target smoothing -- and, per the
+# n_critics investigation, clipped double-Q too, since SB3's DDPG default
+# already matches TD3's critic count) as the only difference between runs.
+
+policy: 'MlpPolicy'
+n_timesteps: 1000000
+learning_starts: 10000
+noise_type: 'normal'
+noise_std: 0.1
+train_freq: 1
+gradient_steps: 1
+learning_rate: 0.001
+batch_size: 256
+policy_kwargs: "dict(net_arch=[400, 300])"

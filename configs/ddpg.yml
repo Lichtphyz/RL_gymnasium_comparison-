@@ -1,0 +1,20 @@
+# DDPG hyperparameters for Reacher-v5
+#
+# NOTE: rl-baselines3-zoo does not ship a Reacher-specific tuned config for
+# DDPG (only a PyBullet variant, which uses a different physics backend and
+# isn't directly comparable). These values are the zoo's general MuJoCo
+# defaults (shared across HalfCheetah/Ant/Hopper/Walker2d), used here as a
+# documented starting point rather than a Reacher-tuned config. Treat this as
+# the DDPG baseline before any tuning; note this explicitly in your writeup.
+# Source: https://github.com/DLR-RM/rl-baselines3-zoo/blob/master/hyperparams/ddpg.yml
+
+policy: 'MlpPolicy'
+n_timesteps: 300000          # Reacher episodes are short (50 steps default), so this trains ~6000 episodes
+learning_starts: 10000
+noise_type: 'normal'
+noise_std: 0.1
+train_freq: 1
+gradient_steps: 1
+learning_rate: 0.001
+batch_size: 256
+policy_kwargs: "dict(net_arch=[400, 300])"

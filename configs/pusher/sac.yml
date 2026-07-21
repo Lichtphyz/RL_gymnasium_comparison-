@@ -1,0 +1,9 @@
+# SAC hyperparameters for Pusher-v5
+#
+# No Pusher-tuned entry upstream (see ddpg.yml's comment) -- SB3 SAC
+# defaults left alone (ent_coef='auto', tau=0.005, gamma=0.99,
+# buffer_size=1_000_000, net_arch=[256,256]), only n_timesteps raised.
+
+policy: 'MlpPolicy'
+n_timesteps: 1000000
+learning_starts: 10000

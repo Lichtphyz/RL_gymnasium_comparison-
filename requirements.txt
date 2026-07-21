@@ -1,0 +1,7 @@
+gymnasium[mujoco]>=0.29
+stable-baselines3[extra]>=2.3
+sb3-contrib>=2.3
+mujoco>=2.3.3
+pyyaml
+moviepy
+tensorboard

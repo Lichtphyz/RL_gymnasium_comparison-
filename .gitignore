@@ -1,0 +1,22 @@
+# Training artifacts (large / regenerable -- keep the repo lightweight)
+models/*.zip
+models/**/*.zip
+models/**/*.pkl
+logs/**
+videos/**/*.mp4
+tmp/**
+
+# Keep the folder structure
+!models/.gitkeep
+!logs/.gitkeep
+!videos/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# OS
+.DS_Store

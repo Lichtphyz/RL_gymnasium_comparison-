@@ -1,0 +1,13 @@
+algo,env_id,train_seed,n_episodes,reached_at_all_rate,reached_within_time_fraction_rate,avg_steps_to_reach,avg_min_distance
+ddpg,Pusher-v5,0,50,0.0,0.0,,0.12070471038853733
+ddpg,Pusher-v5,1,50,0.0,0.0,,0.17488926728519463
+ddpg,Pusher-v5,2,50,0.0,0.0,,0.1260984456394816
+td3,Pusher-v5,0,50,0.0,0.0,,0.056052092780325795
+td3,Pusher-v5,1,50,0.0,0.0,,0.06481000344373011
+td3,Pusher-v5,2,50,0.0,0.0,,0.05495073721662546
+sac,Pusher-v5,0,50,0.0,0.0,,0.05609694794036587
+sac,Pusher-v5,1,50,0.0,0.0,,0.05267734961596281
+sac,Pusher-v5,2,50,0.0,0.0,,0.052793744012492344
+ppo,Pusher-v5,0,50,0.0,0.0,,0.06912279020574844
+ppo,Pusher-v5,1,50,0.0,0.0,,0.08616551563967921
+ppo,Pusher-v5,2,50,0.0,0.0,,0.08621333363879743

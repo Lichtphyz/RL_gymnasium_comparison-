@@ -1,0 +1,21 @@
+# TD3 hyperparameters for Reacher-v5
+#
+# Same caveat as ddpg.yml: no Reacher-specific tuned config exists in
+# rl-baselines3-zoo, so this is the zoo's general MuJoCo default block.
+# Kept structurally identical to configs/ddpg.yml on purpose -- since TD3 is
+# DDPG plus three targeted fixes (clipped double-Q, delayed policy updates,
+# target policy smoothing), matching every other hyperparameter isolates
+# those fixes as the only difference between the two runs. Don't tune this
+# file without mirroring the change in ddpg.yml, or you lose the ablation.
+# Source: https://github.com/DLR-RM/rl-baselines3-zoo/blob/master/hyperparams/td3.yml
+
+policy: 'MlpPolicy'
+n_timesteps: 300000
+learning_starts: 10000
+noise_type: 'normal'
+noise_std: 0.1
+train_freq: 1
+gradient_steps: 1
+learning_rate: 0.001
+batch_size: 256
+policy_kwargs: "dict(net_arch=[400, 300])"

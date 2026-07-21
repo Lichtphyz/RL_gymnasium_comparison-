@@ -1,0 +1,24 @@
+# "True" DDPG hyperparameters for Reacher-v5 -- single critic (n_critics=1)
+#
+# This is the variant that resolves the open caveat from earlier: SB3's
+# regular DDPG (configs/ddpg.yml) defaults to n_critics=2 because its policy
+# class is an alias of TD3Policy, which means the original ddpg-vs-td3
+# comparison only isolated 2 of TD3's 3 fixes (delayed updates + target
+# smoothing), not clipped double-Q. This config forces n_critics=1, so
+# ddpg_1critic-vs-td3 isolates all three fixes cleanly, at the cost of no
+# longer being comparable to the *default* SB3 DDPG most people would run.
+# Keep both configs/variants around -- they answer different questions.
+#
+# Otherwise identical to ddpg.yml/td3.yml so nothing except the critic count
+# differs.
+
+policy: 'MlpPolicy'
+n_timesteps: 300000
+learning_starts: 10000
+noise_type: 'normal'
+noise_std: 0.1
+train_freq: 1
+gradient_steps: 1
+learning_rate: 0.001
+batch_size: 256
+policy_kwargs: "dict(net_arch=[400, 300], n_critics=1)"

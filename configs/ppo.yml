@@ -1,0 +1,23 @@
+# PPO hyperparameters for Reacher
+#
+# Unlike the off-policy algorithms, rl-baselines3-zoo DOES ship a
+# Reacher-tuned PPO config (found under "Reacher-v2" -- Reacher-v2 was the
+# environment's registered id at the time these were tuned via Optuna; the
+# underlying dynamics/reward are unchanged in v5, only bookkeeping differs).
+# These values are copied as-is, not the general on-policy defaults.
+# Source: https://github.com/DLR-RM/rl-baselines3-zoo/blob/master/hyperparams/ppo.yml
+
+policy: 'MlpPolicy'
+normalize: true
+n_envs: 1
+n_timesteps: 1000000
+batch_size: 32
+n_steps: 512
+gamma: 0.9
+learning_rate: 0.000104019
+ent_coef: 0.0000000752585
+clip_range: 0.3
+n_epochs: 5
+gae_lambda: 1.0
+max_grad_norm: 0.9
+vf_coef: 0.950368

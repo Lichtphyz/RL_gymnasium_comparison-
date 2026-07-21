@@ -1,0 +1,28 @@
+# PPO hyperparameters for Pusher-v5
+#
+# Unlike Reacher, there's no RL-Zoo Optuna-tuned Pusher config to copy --
+# these are standard, well-known PPO defaults (the same values SB3's own
+# PPO docstring uses as its defaults), not a Pusher-specific search.
+# normalize: true is kept since Pusher's observation vector mixes angles
+# (~-pi..pi), angular velocities, and several xyz positions at different
+# natural scales -- normalization is standard practice for PPO on mixed-
+# scale observations, independent of any task-specific tuning.
+#
+# n_timesteps scaled up from Reacher's 1M by roughly the same ratio the
+# off-policy configs were scaled (Reacher 300k -> Pusher 1M is ~3.3x;
+# applying that same multiplier here). Like the other Pusher configs, this
+# is a starting point to validate against a real learning curve, not a
+# settled number.
+
+policy: 'MlpPolicy'
+normalize: true
+n_envs: 1
+n_timesteps: 3000000
+n_steps: 2048
+batch_size: 64
+n_epochs: 10
+gamma: 0.99
+gae_lambda: 0.95
+clip_range: 0.2
+ent_coef: 0.0
+learning_rate: 0.0003

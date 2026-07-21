@@ -1,0 +1,12 @@
+# SAC hyperparameters for Reacher-v5
+#
+# Same caveat as ddpg.yml/td3.yml: no Reacher-specific tuned config exists in
+# rl-baselines3-zoo, so this is the zoo's general MuJoCo default block
+# (SAC's version of it only sets n_timesteps/policy/learning_starts and
+# leaves the rest at SB3's SAC defaults -- ent_coef='auto', tau=0.005,
+# gamma=0.99, buffer_size=1_000_000, batch_size=256).
+# Source: https://github.com/DLR-RM/rl-baselines3-zoo/blob/master/hyperparams/sac.yml
+
+policy: 'MlpPolicy'
+n_timesteps: 300000
+learning_starts: 10000

@@ -1,0 +1,23 @@
+# DDPG hyperparameters for Pusher-v5
+#
+# rl-baselines3-zoo has NO tuned Pusher entry for any algorithm (checked
+# directly against the repo) -- unlike Reacher, where PPO had a real tuned
+# config and the others didn't, every algorithm here starts from the same
+# untuned footing. No asymmetry to caveat this time.
+#
+# n_timesteps raised well above Reacher's 300k: Pusher is a 7-DOF contact
+# manipulation task (vs. Reacher's 2-DOF pure reaching), and near-certainly
+# needs more experience to solve. 1M is a starting point, not a validated
+# number -- expect to revisit after the first real training run shows
+# whether the reward curve has actually plateaued by then.
+
+policy: 'MlpPolicy'
+n_timesteps: 1000000
+learning_starts: 10000
+noise_type: 'normal'
+noise_std: 0.1
+train_freq: 1
+gradient_steps: 1
+learning_rate: 0.001
+batch_size: 256
+policy_kwargs: "dict(net_arch=[400, 300])"
