@@ -1,7 +1,27 @@
+# Core RL / environment stack
 gymnasium[mujoco]>=0.29
 stable-baselines3[extra]>=2.3
-sb3-contrib>=2.3
 mujoco>=2.3.3
+
+# stable-baselines3[extra] pulls these in transitively (opencv-python via
+# its "extra" install, pandas/matplotlib for its own plotting utilities),
+# but they're listed explicitly here since our own scripts import them
+# directly (cv2 for video frame labeling, matplotlib for plot_comparison.py)
+# -- a fresh environment shouldn't have to rely on someone else's
+# transitive dependency choices to get a working install.
+opencv-python
+matplotlib
+
+# Config loading (train.py)
 pyyaml
+
+# Video generation (make_grid_video.py, make_progression_video.py, demo_pattern.py)
 moviepy
+
+# Training-curve reading (plot_comparison.py, via TensorBoard's own log format)
 tensorboard
+
+# NOTE: sb3-contrib was listed here previously but isn't actually imported
+# anywhere in src/ -- algo_registry.py only registers ddpg/td3/sac/ppo, no
+# TQC/CrossQ (an idea floated early in the project but never implemented).
+# Add it back if that direction gets picked up again.
