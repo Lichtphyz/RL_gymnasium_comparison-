@@ -19,16 +19,6 @@ algorithms on OpenAI Gymnasium's `Reacher-v5` and `Pusher-v5` (both MuJoCo).
 Tabular Q-learning and DQN are excluded: both require discrete action
 spaces, and Reacher/Pusher's action spaces are continuous.
 
-### A resolved caveat, worth knowing about
-
-We initially added a `ddpg_1critic` variant to force `n_critics=1`, based on
-documentation suggesting SB3's `DDPG` defaults to `n_critics=2` (since its
-policy class aliases `TD3Policy`). Empirically checking the installed SB3
-version (2.9.0) showed regular `ddpg` already trains with a single critic
-by default -- confirmed by both configs producing byte-identical trained
-models. That variant was removed; the plain `ddpg` vs. `td3` comparison was
-already the clean single-critic-vs-twin-critic ablation the whole time.
-
 ## Environments
 
 | | Reacher-v5 | Pusher-v5 |
